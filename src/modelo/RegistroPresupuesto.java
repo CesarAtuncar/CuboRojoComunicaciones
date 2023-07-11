@@ -8,7 +8,7 @@ package modelo;
  *
  * @author user
  */
-public class RegistroPresupuesto{
+public class RegistroPresupuesto extends Cliente{
     int codRegistro;
     String titulo;
     String status;
@@ -18,5 +18,7 @@ public class RegistroPresupuesto{
     public RegistroPresupuesto() {
     }
     
-    
+    public void mostrarCliente(){
+        
+    }
 }
