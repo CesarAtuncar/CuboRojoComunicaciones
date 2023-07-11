@@ -9,8 +9,13 @@ package modelo;
  * @author user
  */
 public class Cliente {
-    String codCliente;
+    int codCliente;
     String ruc;
     String razonSocial;
     String direccion;
+
+    public Cliente() {
+    }
+    
+    
 }
