@@ -9,7 +9,14 @@ package modelo;
  * @author user
  */
 public class RegistroPresupuesto{
+    int codRegistro;
+    String titulo;
     String status;
     String actividad;
-    String titulo;
+    
+
+    public RegistroPresupuesto() {
+    }
+    
+    
 }
