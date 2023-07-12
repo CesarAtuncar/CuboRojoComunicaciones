@@ -21,5 +21,4 @@ public class registropresupuesto {
     double subTotal;
     String titulo;
     double total;
-            
 }
