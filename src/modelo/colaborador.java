@@ -9,8 +9,9 @@ package modelo;
  * @author user
  */
 public class colaborador {
-    String apellido;
-    String nombre;
-    String cargo;
+    int codColaborador;
     String dni;
+    String nombre;
+    String apellido;
+    String cargo;
 }

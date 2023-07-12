@@ -8,9 +8,9 @@ package modelo;
  *
  * @author user
  */
-public class cliente {
-    int codCliente;
-    String ruc;
-    String razonSocial;
-    String direcccion;
+public class actividad {
+    int id_actividad;
+    String enProceso;
+    String reprogramado;
+    String entregado;
 }

@@ -8,17 +8,12 @@ package modelo;
  *
  * @author user
  */
-public class registropresupuesto {
-    String actividad;
+public class requerimiento {
+    int id_requerimiento;
     int cantidad;
     String descripcion;
+    double precioUnitario;
+    double precioTotal;
     double feeAgencia;
-    String nombre;
-    double PrecioTotal;
-    double PrecioUnitario;
-    String razonSocial;
-    String Status;
-    double subTotal;
-    String titulo;
     double total;
 }

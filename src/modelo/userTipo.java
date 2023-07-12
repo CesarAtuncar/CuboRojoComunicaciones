@@ -8,9 +8,10 @@ package modelo;
  *
  * @author user
  */
-public class cliente {
-    int codCliente;
-    String ruc;
-    String razonSocial;
-    String direcccion;
+public class userTipo {
+    int id_userTipo;
+    String supervisor;
+    String ejecutivo;
+    String asistente;
+    String administrador;
 }

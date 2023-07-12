@@ -80,7 +80,7 @@ public class RegistroPresupuesto extends javax.swing.JFrame {
 
         jLabel4.setText("STATUS");
 
-        jCombStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Enviado", "Aceptado", "Anulado" }));
+        jCombStatus.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Por Enviar", "Enviado", "Aceptado", "Anulado" }));
 
         jLabel5.setText("ACTIVIDAD");
 

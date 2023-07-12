@@ -8,11 +8,10 @@ package modelo;
  *
  * @author user
  */
-public class historialpresupuesto {
-    String actividad;
-    int fecha;
-    String nombre;
-    String razonSocial;
-    String titulo;
-    double total;
+public class status {
+    int id_status;
+    String porEnviar;
+    String enviado;
+    String aceptado;
+    String anulado;
 }
