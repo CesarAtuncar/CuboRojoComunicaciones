@@ -8,10 +8,9 @@ package modelo;
  *
  * @author user
  */
-public class status {
-    int id_status;
-    String porEnviar;
-    String enviado;
-    String aceptado;
-    String anulado;
+public interface status {
+    public static String porEnviar = "Por Enviar";
+    public static String enviado = "Enviado";
+    public static String aceptado = "Aceptado";
+    public static String anulado = "Anulado";
 }

@@ -9,8 +9,52 @@ package modelo;
  * @author user
  */
 public class cliente {
-    int codCliente;
-    String ruc;
-    String razonSocial;
-    String direcccion;
+    private int codCliente;
+    private String ruc;
+    private String razonSocial;
+    private String direcccion;
+
+    public cliente() {
+    }
+
+    public cliente(int codCliente, String ruc, String razonSocial, String direcccion) {
+        this.codCliente = codCliente;
+        this.ruc = ruc;
+        this.razonSocial = razonSocial;
+        this.direcccion = direcccion;
+    }
+
+    public String getDirecccion() {
+        return direcccion;
+    }
+
+    public void setDirecccion(String direcccion) {
+        this.direcccion = direcccion;
+    }
+
+    public int getCodCliente() {
+        return codCliente;
+    }
+
+    public void setCodCliente(int codCliente) {
+        this.codCliente = codCliente;
+    }
+
+    public String getRuc() {
+        return ruc;
+    }
+
+    public void setRuc(String ruc) {
+        this.ruc = ruc;
+    }
+
+    public String getRazonSocial() {
+        return razonSocial;
+    }
+
+    public void setRazonSocial(String razonSocial) {
+        this.razonSocial = razonSocial;
+    }
+    
+    
 }

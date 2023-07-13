@@ -9,5 +9,22 @@ package modelo;
  * @author user
  */
 public class registroppto {
-    String titulo;
+    private String titulo;
+
+    public registroppto() {
+    }
+
+    public registroppto(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+    
+    
 }

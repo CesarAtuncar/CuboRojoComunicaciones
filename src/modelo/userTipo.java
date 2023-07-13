@@ -8,10 +8,9 @@ package modelo;
  *
  * @author user
  */
-public class userTipo {
-    int id_userTipo;
-    String supervisor;
-    String ejecutivo;
-    String asistente;
-    String administrador;
+public interface userTipo {
+    public static String supervisor = "supervisor";
+    public static String ejecutivo = "ejecutivo";
+    public static String asistente = "asistente";
+    public static String administrador = "administrador";
 }
