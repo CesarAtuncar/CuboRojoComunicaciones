@@ -8,7 +8,7 @@ package modelo;
  *
  * @author user
  */
-public class user {
+public abstract class user {
     private String apellido;
     private String nombre;
     private String password;

@@ -13,4 +13,6 @@ public interface userTipo {
     public static String ejecutivo = "ejecutivo";
     public static String asistente = "asistente";
     public static String administrador = "administrador";
+    
+    public boolean validar ();
 }
