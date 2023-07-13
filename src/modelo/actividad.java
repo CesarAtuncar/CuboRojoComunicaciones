@@ -8,9 +8,8 @@ package modelo;
  *
  * @author user
  */
-public class actividad {
-    int id_actividad;
-    String enProceso;
-    String reprogramado;
-    String entregado;
+public interface actividad {
+    public static String enProceso = "En Proceso";
+    public static String reprogramado = "Reprogramado";
+    public static String entregado = "Entregado";
 }
