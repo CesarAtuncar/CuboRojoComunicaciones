@@ -17,7 +17,7 @@ import java.sql.SQLException;
  */
 public class UserDao {
     
-public boolean validar(String userName, String password) {
+public boolean validar(User u) {
     Connection conn = null;
     PreparedStatement st = null;
     ResultSet rs = null;
@@ -27,8 +27,8 @@ public boolean validar(String userName, String password) {
         conn = MySQLConexion.getConexion();
         String sql = "SELECT * FROM user WHERE userName = ? AND password = ?";
         st = conn.prepareStatement(sql);
-        st.setString(1, userName);
-        st.setString(2, password);
+        st.setString(1, u.getUserNAme());
+        st.setString(2, u.getPassword());
         
         rs = st.executeQuery();
         
@@ -67,32 +67,6 @@ public boolean validar(String userName, String password) {
     
     return loginExitoso;
 }
-     public void insertar(User user) {
-        // Lógica para insertar un nuevo usuario en la base de datos
-        // Utiliza la información de user para realizar la inserción
-    }
-
-    public void actualizar(User user) {
-        // Lógica para actualizar un usuario existente en la base de datos
-        // Utiliza la información de user para realizar la actualización
-    }
-
-    public void eliminar(User user) {
-        // Lógica para eliminar un usuario de la base de datos
-        // Utiliza la información de user para realizar la eliminación
-    }
-
-    public User obtener(int id) {
-        // Lógica para obtener un usuario de la base de datos por su ID
-        // Realiza la consulta en la base de datos y devuelve un objeto User con los datos obtenidos
-        return null;
-    }
-
-    public List<User> obtenerTodos() {
-        // Lógica para obtener todos los usuarios de la base de datos
-        // Realiza la consulta en la base de datos y devuelve una lista de objetos User con los datos obtenidos
-        return null;
-    } 
 
 }
 

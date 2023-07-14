@@ -6,6 +6,7 @@ package vista;
 
 import dao.UserDao;
 import javax.swing.JFrame;
+import modelo.User;
 
 /**
  *
@@ -14,6 +15,7 @@ import javax.swing.JFrame;
 public class Login extends javax.swing.JFrame {
 
     UserDao obj = new UserDao();
+    User user = new User();
  
     /**
      * Creates new form Login
@@ -124,9 +126,9 @@ public class Login extends javax.swing.JFrame {
 
     private void jbtIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtIngresarActionPerformed
         // TODO add your handling code here:
-        String contraseña = jtxtPassword.getText();
-        String usuario = jtxtUsuario.getText();
-        boolean resultado = obj.validar(usuario, contraseña);
+        user.setPassword(jtxtPassword.getText());
+        user.setUserNAme(jtxtUsuario.getText());
+        boolean resultado = obj.validar(user);
         //login(usuario,contraseña);
         if (resultado) {
          PaginaPrincipal paginaprincipal = new PaginaPrincipal();
