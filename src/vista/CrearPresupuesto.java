@@ -8,12 +8,12 @@ package vista;
  *
  * @author user
  */
-public class RegistroPresupuesto extends javax.swing.JFrame {
+public class CrearPresupuesto extends javax.swing.JFrame {
 
     /**
      * Creates new form PaginaPrincipal
      */
-    public RegistroPresupuesto() {
+    public CrearPresupuesto() {
         initComponents();
     }
 
@@ -87,7 +87,7 @@ public class RegistroPresupuesto extends javax.swing.JFrame {
         jcombActividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona", "Proceso", "Reprogramado", "Entregado" }));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel6.setText("REGISTRO DE PRESUPUESTO");
+        jLabel6.setText("CREAR PRESUPUESTO");
 
         jbtnCrear.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbtnCrear.setText("Crear");
@@ -182,7 +182,7 @@ public class RegistroPresupuesto extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel6)
-                                .addGap(174, 174, 174)
+                                .addGap(302, 302, 302)
                                 .addComponent(jLabel7)
                                 .addGap(26, 26, 26)
                                 .addComponent(jtxtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -271,6 +271,9 @@ public class RegistroPresupuesto extends javax.swing.JFrame {
 
     private void jbtnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnAtrasActionPerformed
         // TODO add your handling code here:
+            PaginaPrincipal paginaprincipal = new PaginaPrincipal();
+            paginaprincipal.setVisible(true);
+            dispose(); 
     }//GEN-LAST:event_jbtnAtrasActionPerformed
 
     private void jcombColabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcombColabActionPerformed
@@ -298,21 +301,23 @@ public class RegistroPresupuesto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(RegistroPresupuesto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearPresupuesto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(RegistroPresupuesto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearPresupuesto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(RegistroPresupuesto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearPresupuesto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(RegistroPresupuesto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CrearPresupuesto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new RegistroPresupuesto().setVisible(true);
+                new CrearPresupuesto().setVisible(true);
             }
         });
     }

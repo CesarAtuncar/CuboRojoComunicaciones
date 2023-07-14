@@ -4,17 +4,25 @@
  */
 package vista;
 
+import dao.UserDao;
+import javax.swing.JFrame;
+
 /**
  *
  * @author user
  */
 public class Login extends javax.swing.JFrame {
 
+    UserDao obj = new UserDao();
+ 
     /**
      * Creates new form Login
      */
+
     public Login() {
         initComponents();
+
+        //String newInputName = jtxtUsuario.getText();
     }
 
     /**
@@ -46,14 +54,22 @@ public class Login extends javax.swing.JFrame {
 
         jbtIngresar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbtIngresar.setText("INGRESAR");
+        jbtIngresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtIngresarActionPerformed(evt);
+            }
+        });
+        jbtIngresar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jbtIngresarKeyPressed(evt);
+            }
+        });
 
         jtxtUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtxtUsuarioActionPerformed(evt);
             }
         });
-
-        jtxtPassword.setText("jPasswordField1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -105,6 +121,27 @@ public class Login extends javax.swing.JFrame {
     private void jtxtUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtUsuarioActionPerformed
+
+    private void jbtIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtIngresarActionPerformed
+        // TODO add your handling code here:
+        String contraseña = jtxtPassword.getText();
+        String usuario = jtxtUsuario.getText();
+        boolean resultado = obj.validar(usuario, contraseña);
+        //login(usuario,contraseña);
+        if (resultado) {
+         PaginaPrincipal paginaprincipal = new PaginaPrincipal();
+        paginaprincipal.setVisible(true);
+        dispose();
+        } else {
+               System.exit(0); 
+            
+        }
+        System.out.println(resultado);
+    }//GEN-LAST:event_jbtIngresarActionPerformed
+
+    private void jbtIngresarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jbtIngresarKeyPressed
+        
+    }//GEN-LAST:event_jbtIngresarKeyPressed
 
     /**
      * @param args the command line arguments

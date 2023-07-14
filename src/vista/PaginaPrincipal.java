@@ -33,20 +33,42 @@ public class PaginaPrincipal extends javax.swing.JFrame {
         jbtnHistorial = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("pagina_uno");
+        setName("pagina_principal02"); // NOI18N
 
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\user\\OneDrive - 國立清華大學 National Tsing Hua University\\Documentos\\Universidad Tecnologica Del Perú\\UTP 2023\\2 Programacion Orientada a Obgetos (POO)\\Trabajo Final\\Cubo Rojo.jpeg")); // NOI18N
 
         jbtnRegistrarCliente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbtnRegistrarCliente.setText("Registrar Cliente");
+        jbtnRegistrarCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnRegistrarClienteActionPerformed(evt);
+            }
+        });
 
         jbtnRegistrarColaborador.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jbtnRegistrarColaborador.setText("Registrar colaborador");
+        jbtnRegistrarColaborador.setText("Crear Presupuesto");
+        jbtnRegistrarColaborador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnRegistrarColaboradorActionPerformed(evt);
+            }
+        });
 
         jbtnRegistrarPresupuesto.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jbtnRegistrarPresupuesto.setText("Registrar Presupuesto");
+        jbtnRegistrarPresupuesto.setText("Requerimientos");
+        jbtnRegistrarPresupuesto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnRegistrarPresupuestoActionPerformed(evt);
+            }
+        });
 
         jbtnHistorial.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbtnHistorial.setText("Historial");
+        jbtnHistorial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnHistorialActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -55,19 +77,19 @@ public class PaginaPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jbtnRegistrarCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jbtnRegistrarColaborador)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbtnRegistrarPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jbtnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(112, 112, 112)
                         .addComponent(jLabel1)
-                        .addGap(300, 300, 300))))
+                        .addContainerGap(357, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addComponent(jbtnRegistrarColaborador)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbtnRegistrarPresupuesto, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(jbtnHistorial, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -85,6 +107,34 @@ public class PaginaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jbtnRegistrarClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarClienteActionPerformed
+        // TODO add your handling code here:
+            RegistroCliente registrocliente = new RegistroCliente();
+            registrocliente.setVisible(true);
+            dispose();
+    }//GEN-LAST:event_jbtnRegistrarClienteActionPerformed
+
+    private void jbtnRegistrarColaboradorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarColaboradorActionPerformed
+        // TODO add your handling code here:
+            CrearPresupuesto crearpresupuesto = new CrearPresupuesto();
+            crearpresupuesto.setVisible(true);
+            dispose();
+    }//GEN-LAST:event_jbtnRegistrarColaboradorActionPerformed
+
+    private void jbtnRegistrarPresupuestoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarPresupuestoActionPerformed
+        // TODO add your handling code here:
+            Requerimientos requerimientos = new Requerimientos();
+            requerimientos.setVisible(true);
+            dispose();     
+    }//GEN-LAST:event_jbtnRegistrarPresupuestoActionPerformed
+
+    private void jbtnHistorialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnHistorialActionPerformed
+        // TODO add your handling code here:
+            Historial historial = new Historial();
+            historial.setVisible(true);
+            dispose(); 
+    }//GEN-LAST:event_jbtnHistorialActionPerformed
 
     /**
      * @param args the command line arguments

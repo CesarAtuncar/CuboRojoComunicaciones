@@ -4,12 +4,16 @@
  */
 package vista;
 
+import dao.DaoCliente;
+import modelo.cliente;
 /**
  *
  * @author user
  */
 public class RegistroCliente extends javax.swing.JFrame {
-
+    
+    DaoCliente obj = new DaoCliente();
+    cliente c = new cliente();
     /**
      * Creates new form RegistroEmpresa
      */
@@ -36,12 +40,25 @@ public class RegistroCliente extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jbtnValidar = new javax.swing.JButton();
         jbtnContinuar = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("RUC");
 
+        jtxtRuc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtRucActionPerformed(evt);
+            }
+        });
+
         jLabel2.setText("RAZON SOCIAL");
+
+        jtxtRazonSocial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtRazonSocialActionPerformed(evt);
+            }
+        });
 
         jbtnRegistrar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbtnRegistrar.setText("Registrar");
@@ -53,6 +70,12 @@ public class RegistroCliente extends javax.swing.JFrame {
 
         jLabel3.setText("DIRECCION");
 
+        jtxtDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtDireccionActionPerformed(evt);
+            }
+        });
+
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel4.setText("REGISTRO DEL CLIENTE");
 
@@ -61,12 +84,20 @@ public class RegistroCliente extends javax.swing.JFrame {
         jbtnContinuar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbtnContinuar.setText("Continuar");
 
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButton1.setText("Atras");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(286, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(260, 260, 260))
             .addGroup(layout.createSequentialGroup()
@@ -76,18 +107,19 @@ public class RegistroCliente extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jbtnRegistrar)
-                        .addGap(212, 212, 212)
+                        .addGap(109, 109, 109)
                         .addComponent(jbtnContinuar))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jtxtRazonSocial, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
-                        .addComponent(jtxtDireccion)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(jtxtRuc, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jbtnValidar))))
+                    .addComponent(jtxtRazonSocial, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
+                    .addComponent(jtxtDireccion)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jtxtRuc, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jbtnValidar)))
                 .addContainerGap(129, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -116,11 +148,12 @@ public class RegistroCliente extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(jtxtDireccion)
-                        .addGap(26, 26, 26)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jbtnContinuar)
                             .addComponent(jbtnRegistrar)
-                            .addComponent(jbtnContinuar))
-                        .addGap(23, 23, 23))))
+                            .addComponent(jButton1))
+                        .addGap(31, 31, 31))))
         );
 
         pack();
@@ -128,7 +161,35 @@ public class RegistroCliente extends javax.swing.JFrame {
 
     private void jbtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarActionPerformed
         // TODO add your handling code here:
+        c.setRuc(jtxtRuc.getText());
+        c.setRazonSocial(jtxtRazonSocial.getText()); 
+        c.setDirecccion(jtxtDireccion.getText());
+        obj.registrar(c);
+       
     }//GEN-LAST:event_jbtnRegistrarActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        PaginaPrincipal paginaprincipal = new PaginaPrincipal();
+        paginaprincipal.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jtxtRazonSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtRazonSocialActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jtxtRazonSocialActionPerformed
+
+    private void jtxtRucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtRucActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jtxtRucActionPerformed
+
+    private void jtxtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtDireccionActionPerformed
+        // TODO add your handling code here:
+        
+
+    }//GEN-LAST:event_jtxtDireccionActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,6 +228,7 @@ public class RegistroCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -174,7 +236,7 @@ public class RegistroCliente extends javax.swing.JFrame {
     private javax.swing.JButton jbtnContinuar;
     private javax.swing.JButton jbtnRegistrar;
     private javax.swing.JButton jbtnValidar;
-    private javax.swing.JTextField jtxtDireccion;
+    public javax.swing.JTextField jtxtDireccion;
     private javax.swing.JTextField jtxtRazonSocial;
     private javax.swing.JTextField jtxtRuc;
     // End of variables declaration//GEN-END:variables

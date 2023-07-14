@@ -107,6 +107,10 @@
         </Property>
         <Property name="text" type="java.lang.String" value="INGRESAR"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtIngresarActionPerformed"/>
+        <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jbtIngresarKeyPressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jtxtUsuario">
       <Events>
@@ -114,9 +118,6 @@
       </Events>
     </Component>
     <Component class="javax.swing.JPasswordField" name="jtxtPassword">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jPasswordField1"/>
-      </Properties>
     </Component>
   </SubComponents>
 </Form>

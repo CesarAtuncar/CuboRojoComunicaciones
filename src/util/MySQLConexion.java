@@ -5,13 +5,14 @@ public class MySQLConexion {
 		Connection con = null;
 		try { Class.forName("com.mysql.cj.jdbc.Driver"); 
 		String url = "jdbc:mysql://localhost/cuborojocomunicaciones"; 
+                String nameBaseDate="cuborojocomunicaciones";
 		String usr = "root";
 		String psw = ""; 
 		con = DriverManager.getConnection(url,usr,psw); 
-		System.out.println("conexion ok");
+		System.out.println("conexion ok a la base de datos"+" "+nameBaseDate);
 		} catch (ClassNotFoundException ex)
 		{ System.out.println("No hay Driver!!"); } 
-		catch (SQLException ex) { System.out.println("Error con la BD "); }
+		catch (SQLException ex) { System.out.println("Error con la BD"); }
 		return con; 
 		}
 }

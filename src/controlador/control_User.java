@@ -5,8 +5,7 @@
 package controlador;
 
 import java.security.KeyStore;
-import modelo.user;
-import modelo.userTipo;
+import modelo.User;
 import vista.Login;
 
 
@@ -14,12 +13,11 @@ import vista.Login;
  *
  * @author user
  */
-public class control_User extends user implements userTipo{
+public class control_User extends User{
     
     
-    @Override
     public boolean validar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet.");
     }
       
     
