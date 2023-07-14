@@ -5,7 +5,7 @@
 package controlador;
 
 import java.security.KeyStore;
-import modelo.User;
+import modelo.user;
 import vista.Login;
 
 
@@ -13,7 +13,7 @@ import vista.Login;
  *
  * @author user
  */
-public class control_User extends User{
+public class control_User extends user{
     
     
     public boolean validar() {

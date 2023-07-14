@@ -8,53 +8,31 @@ package modelo;
  *
  * @author user
  */
-public abstract class user {
-    private String apellido;
-    private String nombre;
-    private String password;
-    private String userName;
+public class user {
+    private String UserName;
+    private String Password;
 
     public user() {
     }
 
-    public user(String apellido, String nombre, String password, String userName) {
-        this.apellido = apellido;
-        this.nombre = nombre;
-        this.password = password;
-        this.userName = userName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public user(String UserName, String Password) {
+        this.UserName = UserName;
+        this.Password = Password;
     }
 
     public String getPassword() {
-        return password;
+        return Password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPassword(String Password) {
+        this.Password = Password;
     }
-    
-    
+
+    public String getUserName() {
+        return UserName;
+    }
+
+    public void setUserName(String UserName) {
+        this.UserName = UserName;
+    }
 }

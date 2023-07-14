@@ -4,7 +4,7 @@
  */
 package dao;
 import java.util.*;
-import modelo.User;
+import modelo.user;
 import util.MySQLConexion;
 
 import java.sql.Connection;
@@ -17,7 +17,7 @@ import java.sql.SQLException;
  */
 public class UserDao {
     
-public boolean validar(User u) {
+public boolean validar(user u) {
     Connection conn = null;
     PreparedStatement st = null;
     ResultSet rs = null;

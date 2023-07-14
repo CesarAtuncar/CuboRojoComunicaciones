@@ -8,7 +8,7 @@ package modelo;
  *
  * @author user
  */
-public class user_Type extends User{
+public class user_Type extends user{
     private int id;
     private String name_cargo;
 

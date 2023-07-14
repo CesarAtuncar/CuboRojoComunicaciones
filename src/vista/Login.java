@@ -6,7 +6,7 @@ package vista;
 
 import dao.UserDao;
 import javax.swing.JFrame;
-import modelo.User;
+import modelo.user;
 
 /**
  *
@@ -15,7 +15,7 @@ import modelo.User;
 public class Login extends javax.swing.JFrame {
 
     UserDao obj = new UserDao();
-    User user = new User();
+    user user = new user();
  
     /**
      * Creates new form Login
