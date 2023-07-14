@@ -27,7 +27,7 @@ public boolean validar(User u) {
         conn = MySQLConexion.getConexion();
         String sql = "SELECT * FROM user WHERE userName = ? AND password = ?";
         st = conn.prepareStatement(sql);
-        st.setString(1, u.getUserNAme());
+        st.setString(1, u.getUserName());
         st.setString(2, u.getPassword());
         
         rs = st.executeQuery();

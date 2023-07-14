@@ -127,7 +127,7 @@ public class Login extends javax.swing.JFrame {
     private void jbtIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtIngresarActionPerformed
         // TODO add your handling code here:
         user.setPassword(jtxtPassword.getText());
-        user.setUserNAme(jtxtUsuario.getText());
+        user.setUserName(jtxtUsuario.getText());
         boolean resultado = obj.validar(user);
         //login(usuario,contraseña);
         if (resultado) {
