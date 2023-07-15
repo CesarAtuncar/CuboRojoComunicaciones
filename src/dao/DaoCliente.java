@@ -24,7 +24,7 @@ public class DaoCliente {
         try {
         Connection con = MySQLConexion.getConexion();
         String sql = "INSERT INTO cliente(ruc, razonSocial, direccion) values (?,?,?)";
-       PreparedStatement st = con.prepareStatement(sql);
+        PreparedStatement st = con.prepareStatement(sql);
             //relaciono cada cadena con el valor
 
             st.setString(1, c.getRuc());

@@ -4,12 +4,18 @@
  */
 package vista;
 
+import modelo.colaborador;
+import dao.DaoColaborador;
+import javax.swing.JComboBox;
+import modelo.user_Type;
 /**
  *
  * @author user
  */
 public class RegistroColaborador extends javax.swing.JFrame {
-
+    DaoColaborador obj = new DaoColaborador();
+    colaborador col = new colaborador();
+//    JComboBox<String> jcombCargo = new JComboBox<String>();
     /**
      * Creates new form RegistroColaborador
      */
@@ -63,6 +69,11 @@ public class RegistroColaborador extends javax.swing.JFrame {
         jLabel4.setText("CARGO");
 
         jcombCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Supervisor", "Ejecutivo", "Asistente", "Administrador" }));
+        jcombCargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcombCargoActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("APELLIDO");
 
@@ -127,11 +138,24 @@ public class RegistroColaborador extends javax.swing.JFrame {
 
     private void jbtnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnGuardarActionPerformed
         // TODO add your handling code here:
+        col.setDni(jtxtDni.getText());
+        col.setNombre(jtxtNombre.getText());
+        col.setApellido(jtxtApellido.getText());
+//        String valoselecionado = (String) jcombCargo.getSelectedItem();
+        col.setName_cargo((String) jcombCargo.getSelectedItem());
+        
+        obj.registrar(col);
+        
     }//GEN-LAST:event_jbtnGuardarActionPerformed
 
     private void jtxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtNombreActionPerformed
+
+    private void jcombCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcombCargoActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jcombCargoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -174,10 +198,10 @@ public class RegistroColaborador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JButton jbtnGuardar;
-    private javax.swing.JComboBox<String> jcombCargo;
-    private javax.swing.JTextField jtxtApellido;
-    private javax.swing.JTextField jtxtDni;
-    private javax.swing.JTextField jtxtNombre;
+    public javax.swing.JButton jbtnGuardar;
+    public javax.swing.JComboBox<String> jcombCargo;
+    public javax.swing.JTextField jtxtApellido;
+    public javax.swing.JTextField jtxtDni;
+    public javax.swing.JTextField jtxtNombre;
     // End of variables declaration//GEN-END:variables
 }
