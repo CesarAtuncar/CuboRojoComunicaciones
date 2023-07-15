@@ -34,8 +34,6 @@ public class user_Type extends user{
 
     public void setId(int id) {
         this.id = id;
-    }
-    
-    
+    }  
 
 }

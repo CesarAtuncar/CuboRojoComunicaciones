@@ -131,7 +131,7 @@ public class Login extends javax.swing.JFrame {
         boolean resultado = obj.validar(user);
         //login(usuario,contraseña);
         if (resultado) {
-         PaginaPrincipal paginaprincipal = new PaginaPrincipal();
+        PaginaPrincipal paginaprincipal = new PaginaPrincipal();
         paginaprincipal.setVisible(true);
         dispose();
         } else {

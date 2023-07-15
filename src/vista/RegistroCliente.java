@@ -5,6 +5,7 @@
 package vista;
 
 import dao.DaoCliente;
+import javax.swing.JTextField;
 import modelo.cliente;
 /**
  *
@@ -13,7 +14,7 @@ import modelo.cliente;
 public class RegistroCliente extends javax.swing.JFrame {
 
     DaoCliente obj = new DaoCliente();
-    cliente c = new cliente();
+    cliente cli = new cliente();
     /**
      * Creates new form RegistroEmpresa
      */
@@ -166,10 +167,10 @@ public class RegistroCliente extends javax.swing.JFrame {
 
     private void jbtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarActionPerformed
         // TODO add your handling code here:
-        c.setRuc(jtxtRuc.getText());
-        c.setRazonSocial(jtxtRazonSocial.getText()); 
-        c.setDirecccion(jtxtDireccion.getText());
-        obj.registrar(c);
+        cli.setRuc(jtxtRuc.getText());
+        cli.setRazonSocial(jtxtRazonSocial.getText()); 
+        cli.setDirecccion(jtxtDireccion.getText());
+        obj.registrar(cli);
         CrearPresupuesto crearpresupuesto = new CrearPresupuesto();
         crearpresupuesto.setVisible(true);
         dispose();
@@ -201,10 +202,12 @@ public class RegistroCliente extends javax.swing.JFrame {
 
     private void jbtnValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnValidarActionPerformed
         // TODO add your handling code here:
-        String rucVal = jtxtRuc.getText();
-        obj.consulta(rucVal);
-        System.out.println(c.getCodCliente()+"\n"+c.getRuc()+"\n"+c.getRazonSocial()+"\n"+c.getDirecccion());
-        System.exit(0);
+        jtxtRuc.getText();
+        obj.consulta(jtxtRuc);
+    
+        System.out.println(cli.getCodCliente()+"\n"+cli.getRuc()+"\n"+cli.getRazonSocial()+"\n"+cli.getDirecccion());
+        dispose();
+
         
     }//GEN-LAST:event_jbtnValidarActionPerformed
 

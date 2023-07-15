@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import javax.swing.JTextField;
 
 /**
  *
@@ -37,25 +38,26 @@ public class DaoCliente {
         }
     }
 
-    public cliente consulta(String rucVal) {
+    public cliente consulta(JTextField jtxtRuc) {
         cliente c = null;
         try {
             Connection cn = MySQLConexion.getConexion();
-            String sql = "SELECT id_cliente, ruc, razonSocial, direccion FROM cliente WHERE ruc=?";
+            String sql = "SELECT  id_cliente, ruc, razonSocial, direccion FROM cliente WHERE id_cliente = ?";
             PreparedStatement st = cn.prepareStatement(sql);
-            st.setString(1, rucVal);
-
+            st.setInt(1, Integer.parseInt(jtxtRuc.getText()) );
             ResultSet rs = st.executeQuery();
+            
             if (rs.next()) {//leer filaxfila y pasarlo al arraylist
+
                 c = new cliente();
                 c.setCodCliente(rs.getInt(1));
                 c.setRuc(rs.getString(2));
                 c.setRazonSocial(rs.getString(3));
                 c.setDirecccion(rs.getString(4));
             }
-//            rs.close();
-//            st.close();
-//            cn.close();
+            rs.close();
+            st.close();
+            cn.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -63,26 +65,4 @@ public class DaoCliente {
     }
 }
 
-//    public List<cliente> listar() {
-//        List<cliente> lista = new ArrayList();
-//
-//        try {
-//            Connection con = MySQLConexion.getConexion();
-//            String sql = "select razonSocial, direccion from cliente";
-//            PreparedStatement st = con.prepareStatement(sql);
-//            ResultSet rs = st.executeQuery();
-//            //relaciono cada cadena con el valor
-//            st.executeQuery();
-//
-//            while (rs.next()) {//leer filaxfila y pasarlo al arraylist
-//                cliente c = new cliente();
-//                c.setRazonSocial(rs.getString(1));
-//                c.setDirecccion(rs.getString(2));
-//                lista.add(c);
-//            }
-//        } catch (Exception ex) {
-//            ex.printStackTrace();
-//        }
-//        return lista;
-//    }
 
