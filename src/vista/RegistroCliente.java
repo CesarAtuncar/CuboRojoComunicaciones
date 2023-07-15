@@ -11,7 +11,7 @@ import modelo.cliente;
  * @author user
  */
 public class RegistroCliente extends javax.swing.JFrame {
-    
+
     DaoCliente obj = new DaoCliente();
     cliente c = new cliente();
     /**
@@ -80,6 +80,11 @@ public class RegistroCliente extends javax.swing.JFrame {
         jLabel4.setText("REGISTRO DEL CLIENTE");
 
         jbtnValidar.setText("Validar");
+        jbtnValidar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnValidarActionPerformed(evt);
+            }
+        });
 
         jbtnContinuar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jbtnContinuar.setText("Continuar");
@@ -165,6 +170,9 @@ public class RegistroCliente extends javax.swing.JFrame {
         c.setRazonSocial(jtxtRazonSocial.getText()); 
         c.setDirecccion(jtxtDireccion.getText());
         obj.registrar(c);
+        CrearPresupuesto crearpresupuesto = new CrearPresupuesto();
+        crearpresupuesto.setVisible(true);
+        dispose();
        
     }//GEN-LAST:event_jbtnRegistrarActionPerformed
 
@@ -190,6 +198,15 @@ public class RegistroCliente extends javax.swing.JFrame {
         
 
     }//GEN-LAST:event_jtxtDireccionActionPerformed
+
+    private void jbtnValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnValidarActionPerformed
+        // TODO add your handling code here:
+        String rucVal = jtxtRuc.getText();
+        obj.consulta(rucVal);
+        System.out.println(c.getCodCliente()+"\n"+c.getRuc()+"\n"+c.getRazonSocial()+"\n"+c.getDirecccion());
+        System.exit(0);
+        
+    }//GEN-LAST:event_jbtnValidarActionPerformed
 
     /**
      * @param args the command line arguments
