@@ -38,31 +38,62 @@ public class DaoCliente {
         }
     }
 
-    public cliente consulta(JTextField jtxtRuc) {
-        cliente c = null;
+    public boolean validar(String ruc) {
+
+        boolean existeCliente = false;
+
         try {
             Connection cn = MySQLConexion.getConexion();
-            String sql = "SELECT  id_cliente, ruc, razonSocial, direccion FROM cliente WHERE id_cliente = ?";
+            String sql = "SELECT * FROM cliente WHERE ruc = ?";
             PreparedStatement st = cn.prepareStatement(sql);
-            st.setInt(1, Integer.parseInt(jtxtRuc.getText()) );
-            ResultSet rs = st.executeQuery();
-            
-            if (rs.next()) {//leer filaxfila y pasarlo al arraylist
 
+            st.setString(1, ruc);
+            ResultSet rs = st.executeQuery();
+
+            if (rs.next()) {
+                // El usuario y contraseña son válidos
+                existeCliente = true;
+                System.out.println("El cliente existe");
+
+            } else {
+                // El usuario y/o contraseña no son válidos
+                existeCliente = false;
+                System.out.println("El cliente NO existe");
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return existeCliente;
+    }
+
+    public String consulta(String ruc) {
+        cliente c = null;
+        String Resultado = "";
+        
+        try {
+            Connection cn = MySQLConexion.getConexion();           // String sql = "SELECT id_cliente, ruc, razonSocial, direccion FROM cliente WHERE ruc = ?;";
+            String sql = "SELECT id_cliente, ruc, razonSocial, direccion FROM cliente WHERE ruc = ?;";
+            PreparedStatement st = cn.prepareStatement(sql);
+            st.setString(1, ruc);
+            ResultSet rs = st.executeQuery();
+
+            if (rs.next()) {
                 c = new cliente();
                 c.setCodCliente(rs.getInt(1));
                 c.setRuc(rs.getString(2));
                 c.setRazonSocial(rs.getString(3));
                 c.setDirecccion(rs.getString(4));
-            }
+                System.out.println("El Codigo es: " + c.getCodCliente() + "\n"
+                        + "El ruc es: " + c.getRuc() + "\n"
+                        + "La razon Social es: " + c.getRazonSocial() + "\n"
+                        + "La Direccion es: " + c.getDirecccion());      
+           }
             rs.close();
             st.close();
             cn.close();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        return c;
+        return Resultado;
     }
 }
-
-

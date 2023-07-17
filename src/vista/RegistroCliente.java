@@ -7,6 +7,7 @@ package vista;
 import dao.DaoCliente;
 import javax.swing.JTextField;
 import modelo.cliente;
+
 /**
  *
  * @author user
@@ -14,7 +15,8 @@ import modelo.cliente;
 public class RegistroCliente extends javax.swing.JFrame {
 
     DaoCliente obj = new DaoCliente();
-    cliente cli = new cliente();
+    cliente c = new cliente();
+
     /**
      * Creates new form RegistroEmpresa
      */
@@ -167,14 +169,15 @@ public class RegistroCliente extends javax.swing.JFrame {
 
     private void jbtnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnRegistrarActionPerformed
         // TODO add your handling code here:
-        cli.setRuc(jtxtRuc.getText());
-        cli.setRazonSocial(jtxtRazonSocial.getText()); 
-        cli.setDirecccion(jtxtDireccion.getText());
-        obj.registrar(cli);
+        c.setRuc(jtxtRuc.getText());
+        c.setRazonSocial(jtxtRazonSocial.getText());
+        c.setDirecccion(jtxtDireccion.getText());
+        obj.registrar(c);
+
         CrearPresupuesto crearpresupuesto = new CrearPresupuesto();
         crearpresupuesto.setVisible(true);
         dispose();
-       
+
     }//GEN-LAST:event_jbtnRegistrarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -186,29 +189,37 @@ public class RegistroCliente extends javax.swing.JFrame {
 
     private void jtxtRazonSocialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtRazonSocialActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jtxtRazonSocialActionPerformed
 
     private void jtxtRucActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtRucActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jtxtRucActionPerformed
 
     private void jtxtDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtDireccionActionPerformed
         // TODO add your handling code here:
-        
+
 
     }//GEN-LAST:event_jtxtDireccionActionPerformed
 
     private void jbtnValidarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnValidarActionPerformed
         // TODO add your handling code here:
-        jtxtRuc.getText();
-        obj.consulta(jtxtRuc);
-    
-        System.out.println(cli.getCodCliente()+"\n"+cli.getRuc()+"\n"+cli.getRazonSocial()+"\n"+cli.getDirecccion());
-        dispose();
+        String ruc = jtxtRuc.getText();
+        boolean exite = obj.validar(ruc);
 
-        
+        if (exite) {
+            obj.consulta(ruc);
+            CrearPresupuesto crearpresupuesto = new CrearPresupuesto();
+            crearpresupuesto.setVisible(true);
+            dispose();
+        } else {
+            RegistroCliente registrocliente = new RegistroCliente();
+            registrocliente.setVisible(true);
+            dispose();
+        }
+
+
     }//GEN-LAST:event_jbtnValidarActionPerformed
 
     /**
