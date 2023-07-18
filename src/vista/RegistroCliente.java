@@ -4,7 +4,8 @@
  */
 package vista;
 
-import dao.DaoCliente;
+import controlador.DaoCliente;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import modelo.cliente;
 
@@ -214,6 +215,7 @@ public class RegistroCliente extends javax.swing.JFrame {
             crearpresupuesto.setVisible(true);
             dispose();
         } else {
+            JOptionPane.showMessageDialog(this, "El cliente no existe");
             RegistroCliente registrocliente = new RegistroCliente();
             registrocliente.setVisible(true);
             dispose();

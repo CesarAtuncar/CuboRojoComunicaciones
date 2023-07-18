@@ -5,7 +5,7 @@
 package vista;
 
 import modelo.colaborador;
-import dao.DaoColaborador;
+import controlador.DaoColaborador;
 import javax.swing.JComboBox;
 import modelo.user_Type;
 /**
@@ -38,8 +38,6 @@ public class RegistroColaborador extends javax.swing.JFrame {
         jtxtNombre = new javax.swing.JTextField();
         jbtnGuardar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jcombCargo = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jtxtApellido = new javax.swing.JTextField();
 
@@ -66,15 +64,6 @@ public class RegistroColaborador extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel3.setText("REGISTRO DE COLABORADOR");
 
-        jLabel4.setText("CARGO");
-
-        jcombCargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Supervisor", "Ejecutivo", "Asistente", "Administrador" }));
-        jcombCargo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jcombCargoActionPerformed(evt);
-            }
-        });
-
         jLabel5.setText("APELLIDO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -94,13 +83,11 @@ public class RegistroColaborador extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel1)
-                                    .addComponent(jLabel4)
                                     .addComponent(jLabel5))
                                 .addGap(18, 18, 18)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jtxtNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 271, Short.MAX_VALUE)
                                     .addComponent(jtxtDni, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jcombCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jtxtApellido)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(190, 190, 190)
@@ -124,13 +111,9 @@ public class RegistroColaborador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
                     .addComponent(jtxtApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jcombCargo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
+                .addGap(18, 18, 18)
                 .addComponent(jbtnGuardar)
-                .addGap(37, 37, 37))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
@@ -142,7 +125,7 @@ public class RegistroColaborador extends javax.swing.JFrame {
         col.setNombre(jtxtNombre.getText());
         col.setApellido(jtxtApellido.getText());
 //        String valoselecionado = (String) jcombCargo.getSelectedItem();
-        col.setName_cargo((String) jcombCargo.getSelectedItem());
+//        col.setName_cargo((String) jcombCargo.getSelectedItem());
         
         obj.registrar(col);
         
@@ -151,11 +134,6 @@ public class RegistroColaborador extends javax.swing.JFrame {
     private void jtxtNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jtxtNombreActionPerformed
-
-    private void jcombCargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcombCargoActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_jcombCargoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -196,10 +174,8 @@ public class RegistroColaborador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     public javax.swing.JButton jbtnGuardar;
-    public javax.swing.JComboBox<String> jcombCargo;
     public javax.swing.JTextField jtxtApellido;
     public javax.swing.JTextField jtxtDni;
     public javax.swing.JTextField jtxtNombre;

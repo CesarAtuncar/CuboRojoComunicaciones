@@ -4,7 +4,7 @@
  */
 package vista;
 
-import dao.UserDao;
+import controlador.UserDao;
 import javax.swing.JFrame;
 import modelo.user;
 
@@ -136,7 +136,6 @@ public class Login extends javax.swing.JFrame {
         dispose();
         } else {
                System.exit(0); 
-            
         }
         System.out.println(resultado);
     }//GEN-LAST:event_jbtIngresarActionPerformed
