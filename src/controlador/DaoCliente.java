@@ -60,7 +60,7 @@ public class DaoCliente {
                 existeCliente = false;
                 System.out.println("El cliente NO existe");
             }
-        } catch (SQLException ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         return existeCliente;
