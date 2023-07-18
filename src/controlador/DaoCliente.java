@@ -71,7 +71,7 @@ public class DaoCliente {
         String Resultado = "";
         
         try {
-            Connection cn = MySQLConexion.getConexion();           // String sql = "SELECT id_cliente, ruc, razonSocial, direccion FROM cliente WHERE ruc = ?;";
+            Connection cn = MySQLConexion.getConexion();
             String sql = "SELECT id_cliente, ruc, razonSocial, direccion FROM cliente WHERE ruc = ?;";
             PreparedStatement st = cn.prepareStatement(sql);
             st.setString(1, ruc);

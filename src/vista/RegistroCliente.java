@@ -178,7 +178,6 @@ public class RegistroCliente extends javax.swing.JFrame {
         CrearPresupuesto crearpresupuesto = new CrearPresupuesto();
         crearpresupuesto.setVisible(true);
         dispose();
-
     }//GEN-LAST:event_jbtnRegistrarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -220,8 +219,6 @@ public class RegistroCliente extends javax.swing.JFrame {
             registrocliente.setVisible(true);
             dispose();
         }
-
-
     }//GEN-LAST:event_jbtnValidarActionPerformed
 
     /**
