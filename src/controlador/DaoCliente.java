@@ -33,7 +33,7 @@ public class DaoCliente {
             st.setString(3, c.getDirecccion());
             st.executeUpdate();
 
-        } catch (Exception ex) {
+        } catch (SQLException ex) {
             ex.printStackTrace();
         }
     }

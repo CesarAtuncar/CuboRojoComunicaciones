@@ -73,6 +73,12 @@ public class Login extends javax.swing.JFrame {
             }
         });
 
+        jtxtPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jtxtPasswordActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -143,6 +149,10 @@ public class Login extends javax.swing.JFrame {
     private void jbtIngresarKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jbtIngresarKeyPressed
         
     }//GEN-LAST:event_jbtIngresarKeyPressed
+
+    private void jtxtPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtxtPasswordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jtxtPasswordActionPerformed
 
     /**
      * @param args the command line arguments
