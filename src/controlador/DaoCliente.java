@@ -15,10 +15,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JTextField;
 
-/**
- *
- * @author user
- */
 public class DaoCliente {
 
     public void registrar(cliente c) {

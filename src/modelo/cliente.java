@@ -4,10 +4,6 @@
  */
 package modelo;
 
-/**
- *
- * @author user
- */
 public class cliente {
     private int codCliente;
     private String ruc;

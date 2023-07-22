@@ -4,10 +4,6 @@
  */
 package modelo;
 
-/**
- *
- * @author user
- */
 public class user {
     private String UserName;
     private String Password;
